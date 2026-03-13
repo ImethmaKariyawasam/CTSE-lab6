@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: billing-service
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: billing-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+    listener:
+      missing-topics-fatal: false
+    admin:
+      fail-fast: false
