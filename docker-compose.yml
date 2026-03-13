@@ -79,10 +79,6 @@ services:
       - order-service
       - inventory-service
       - billing-service
-    environment:
-      SPRING_CLOUD_GATEWAY_ROUTES_0_ID: order-service
-      SPRING_CLOUD_GATEWAY_ROUTES_0_URI: http://order-service:8081
-      SPRING_CLOUD_GATEWAY_ROUTES_0_PREDICATES_0: Path=/orders/**
 
 networks:
   default:
